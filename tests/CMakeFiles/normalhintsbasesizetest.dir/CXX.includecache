@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/test/kwin/kwin-5.18.4.1/tests/normalhintsbasesizetest.cpp
+cstdlib
+-
+iostream
+-
+xcb/xcb.h
+-
+xcb/xcb_icccm.h
+-
+
+/home/test/kwin/kwin-5.18.4.1/tests/normalhintsbasesizetest_autogen/mocs_compilation.cpp
+

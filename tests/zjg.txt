@@ -1,0 +1,21 @@
+if (XCB_ICCCM_FOUND)
+    set(normalhintsbasesizetest_SRCS normalhintsbasesizetest.cpp)
+    add_executable(normalhintsbasesizetest ${normalhintsbasesizetest_SRCS})
+    target_link_libraries(normalhintsbasesizetest XCB::XCB XCB::ICCCM KF5::WindowSystem)
+endif()
+
+# next target
+
+set(libinputtest_SRCS
+    ${KWIN_SOURCE_DIR}/libinput/connection.cpp
+    ${KWIN_SOURCE_DIR}/libinput/context.cpp
+    ${KWIN_SOURCE_DIR}/libinput/device.cpp
+    ${KWIN_SOURCE_DIR}/libinput/events.cpp
+    ${KWIN_SOURCE_DIR}/libinput/libinput_logging.cpp
+    ${KWIN_SOURCE_DIR}/logind.cpp
+    ${KWIN_SOURCE_DIR}/udev.cpp
+    libinputtest.cpp
+)
+add_executable(libinputtest ${libinputtest_SRCS})
+add_definitions(-DKWIN_BUILD_TESTING)
+target_link_libraries(libinputtest Qt5::Core Qt5::DBus Libinput::Libinput ${UDEV_LIBS} KF5::ConfigCore KF5::GlobalAccel KF5::WindowSystem)
